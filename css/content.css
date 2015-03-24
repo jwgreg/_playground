@@ -1,0 +1,215 @@
+p {
+	line-height: 1.5em;
+}
+
+p.noQuotes:before {
+	content: "before content - ";
+	font-weight: bold;
+}
+
+p.noQuotes:after {
+	content: " - after content \2603";
+	font-weight: bold;
+}
+
+q {
+	color: #00008B;
+	font-style: italic;
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after{
+	content: close-quote;
+}
+
+/*h1:before {
+	content: "Chapter - "; 
+}
+*/
+
+h1 {
+	counter-increment: headers;
+	counter-reset: subsections;
+}
+h1:before {
+	content: counter(headers, upper-roman) " ";
+	font-style: italic;
+}
+h2 {
+	counter-increment: subsections;
+}
+h2:before {
+	content: counter(headers, upper-roman) "." counter(subsections, lower-roman) ": ";
+	font-style: italic;
+}
+
+
+/* Links with content */
+
+a.testLinks:before {
+	color: #335577;
+	background: #999;
+	font-size: 120%;
+	padding; 2px 5px;
+	display: inline-block;
+	width: 1.2em;
+	margin-right: 10px;
+	text-align: center;
+}
+
+a.testLinks[href^="mailto:"]:before {
+	content: "\2709 ";
+}
+a.testLinks[href^="tel:"]:before {
+	content: "\2706 ";
+}
+a.testLinks[href^="vcs"]:before {
+	content: "\231A ";
+}
+
+a.attrVals[href^=http]:hover {
+	position: relative;
+}
+
+a.attrVals[href^=http]:hover:after {
+	content: attr(href);
+	position: absolute;
+	top: 1em;
+	left: 0;
+	background-color: #005DAA;
+	color: white;
+	padding: 3px 5px;
+	line-height: 1;
+}
+
+blockquote p:before,
+blockquote p:after {
+	font-size: 2em;
+	color: #C7573A;
+	line-height: 0;
+	vertical-align: middle;
+}
+
+blockquote p:first-child:before {
+	content: "\275D";
+	margin: 0 5px 0 -40px;
+}
+
+blockquote p:last-child:after {
+	content: "\275E";
+	margin: 0 -40px 0 5px;
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-bottom: 20px solid #005DAA;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-top: 20px solid #005DAA;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	
+	border-left: 20px solid #005DAA;
+}
+
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	
+	border-right:20px solid #005DAA; 
+}
+
+#triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-right: 100px solid red;
+	border-bottom: 50px solid transparent;
+}
+
+
+/*quote bubble*/
+
+.quote1 {
+	border-radius: 10px;
+	position: relative;
+	padding: 20px;
+	background-color: #005DAA;
+	color: white;
+}
+.quote1:after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #005DAA;
+	bottom: -39px;
+	left: 20px;
+}
+
+/*thought bubble*/
+.thoughtdiv {
+	height: 200px;
+	width: 350px;
+}
+
+.thought,.thought:before,.thought:after {
+	border-radius: 50%;
+	border: 5px solid #005DAA;
+	background-color: white;
+	position: relative;
+}
+.thought:before,
+.thought:after {
+	content: '';
+	position: absolute;
+	left: 20%;
+	bottom: -30px;
+	height: 40px;
+	width:40px;
+}
+.thought:after {
+	left: 12%;
+	bottom: -50px;
+	height: 20px;
+	width: 20px;
+}
+
+p.thought {
+	line-height: 4;
+	width: 350px;
+	padding-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

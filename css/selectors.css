@@ -1,0 +1,28 @@
+ol > li {
+	color: purple;
+}
+
+ol li {
+	color: green;
+}
+
+li {
+	color: yellow;
+}
+
+li.thisClass {
+	color: red;
+}
+
+li.thisClass ~ li {
+	color:blue;
+}
+
+li.thisClass + li {
+	color:orange;
+}
+
+a[href^=mailto] {
+	background-image: url(/assets/images/emailicon.gif);
+}
+
